@@ -26,8 +26,10 @@ app.use(authRoutes);
 app.get('/', (req,res)=>{
   res.send("server is running")
 });
-app.use('/api/v1',bearer, v1Routes);
-app.use('/api/v2',bearer, v2Routes);
+app.use( v1Routes);
+// app.use(v2Routes);
+// app.use('/api/v1',bearer, v1Routes);
+// app.use('/api/v2',bearer, v2Routes);
 
 app.use(notFoundHandler);
 app.use(errorHandler);
